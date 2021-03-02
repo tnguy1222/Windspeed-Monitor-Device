@@ -34,3 +34,21 @@
 <p align="center">
 <img src="Diagram/UMLClassDiagram.png"/>
 </p>
+
+# Login Page
+
+<p align="center">
+<img src="Diagram/LoginPage.png"/>
+</p>
+
+# Register Page
+
+<p align="center">
+<img src="Diagram/RegisterPage.png"/>
+</p>
+
+# Device Information Display Diagram
+
+<p align="center">
+<img src="Diagram/DeviceDisplayPage.png"/>
+</p>
