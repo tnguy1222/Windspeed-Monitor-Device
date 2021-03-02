@@ -1,5 +1,5 @@
 # Windspeed Monitor Device
-<p> Develop IoT weather tracking device reports to a web application using Java EE framework with implementation of RESTful service and MySQL. </>p
+<p> Develop IoT weather tracking device reports to a web application using Java EE framework with implementation of RESTful service and MySQL. </p>
 
 # ER diagram:
 
