@@ -1,0 +1,58 @@
+<!-- Adam Bender
+Jim Nguyen
+Milestone 4
+February 21, 2021
+IoT page -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+		<ui:define name="content">
+			<div align="center">
+				<h2>IoT Reporting Page</h2>
+				
+				<h:form>
+					<h:commandButton value="Refresh"
+						action="#{deviceController.refreshData()}" />
+				</h:form>
+				
+				<div
+					style='display: inline-block; vertical-align: top; padding-right: 100px;'>
+					<h2>Table</h2>
+					
+					<h:dataTable value="#{devices}" var="d"
+					styleClass="order-table" headerClass="order-table-header"
+					rowClasses="order-table-odd-row,order-table-even-row">
+					<h:column>
+						<f:facet name="header">Temp</f:facet>
+						#{d.temp}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Time</f:facet>
+						#{d.time}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Location</f:facet>
+						#{d.location}
+					</h:column>
+
+				</h:dataTable>
+				
+				
+				</div>
+				<div style='display: inline-block; vertical-align: top;'>
+					<h2>Chart</h2>
+    				<p:chart type="line" model="#{deviceController.lineModel}" style="height:400px;width:600px"/>
+				</div>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

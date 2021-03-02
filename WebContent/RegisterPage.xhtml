@@ -1,0 +1,61 @@
+<!-- Adam Bender
+Jim Nguyen
+Milestone 4
+February 21, 2021
+Register page -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Register Form</title>
+</h:head>
+<h:body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+		<ui:define name="content">
+			<div align="center">
+				<h1>Register</h1>
+
+				<!-- Register fields in a table -->
+				<h:form>
+					<table>
+						<tr>
+							<td><h:outputText value="First Name: " /></td>
+							<td><h:inputText id="firstName" value="#{user.firstName}" />
+							</td>
+							<td><h:message for="firstName" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Last Name: " /></td>
+							<td><h:inputText id="lastName" value="#{user.lastName}" /></td>
+							<td><h:message for="lastName" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Username: " /></td>
+							<td><h:inputText id="username" value="#{user.username}" /></td>
+							<td><h:message for="username" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Password: " /></td>
+							<td><h:inputText id="password" value="#{user.password}" /></td>
+							<td><h:message for="password" style="color:red" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputText value="Email: " /></td>
+							<td><h:inputText id="email" value="#{user.email}" /></td>
+							<td><h:message for="email" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:commandButton value="Register"
+									action="#{accountController.register(user)}" /></td>
+						</tr>
+					</table>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

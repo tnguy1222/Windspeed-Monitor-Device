@@ -1,0 +1,47 @@
+<!-- Adam Bender
+Jim Nguyen
+Milestone 4
+February 21, 2021
+IoT page -->
+
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login</title>
+</h:head>
+
+<h:body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+		<ui:define name="content">
+			<div align="center">
+				<h1>Login</h1>
+
+				<!-- Login form in table -->
+				<h:form>
+
+					<h:outputLabel for="username">Username: </h:outputLabel>
+					<h:inputText id="username" value="#{user.username}" />
+					<h:message for="username" style="color:red" />
+					<br />
+					<br />
+					<h:outputLabel for="password">Password: </h:outputLabel>
+					<h:inputSecret id="password" value="#{user.password}" />
+
+					<h:message for="password" style="color:red" />
+					<br />
+					<h:commandButton value="Login"
+						action="#{accountController.authenticate(user)}" />
+					<br />
+
+				</h:form>
+
+			</div>
+		</ui:define>
+	</ui:composition>
+
+
+
+</h:body>
+</HTML>
